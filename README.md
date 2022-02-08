@@ -1,1 +1,2 @@
-# cis92
+# My project for cis92
+Michael Chavez
