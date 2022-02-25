@@ -7,6 +7,6 @@ COPY seed/app/mysite/ /app
 
 WORKDIR /app/mysite
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["seed/app/mysite/entrypoint.sh"]
 CMD ["run"]
 
