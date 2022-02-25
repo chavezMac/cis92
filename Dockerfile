@@ -7,6 +7,6 @@ COPY seed/app/mysite/ /app
 
 WORKDIR /app/mysite
 
-ENTRYPOINT ["bash"]
-CMD ["-c", "entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
+CMD ["run"]
 
