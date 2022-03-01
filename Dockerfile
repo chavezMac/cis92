@@ -14,6 +14,6 @@ WORKDIR /app/mysite
 RUN chmod 744 entrypoint.sh
 
 ENTRYPOINT ["/bin/bash"]
-CMD ["./entrypoint.sh"]
+CMD ["entrypoint.sh"]
 
 
