@@ -7,8 +7,6 @@ COPY app/ /app
 
 WORKDIR /app
 
-RUN django-admin startproject mysite
-
 RUN mv entrypoint.sh mysite/
 WORKDIR /app/mysite
 RUN chmod 744 entrypoint.sh
