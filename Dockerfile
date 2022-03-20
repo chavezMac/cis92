@@ -10,6 +10,7 @@ WORKDIR /app
 RUN mv entrypoint.sh mysite/
 WORKDIR /app/mysite
 RUN chmod 744 entrypoint.sh
+RUN mkdir /db
 
 ENTRYPOINT ["/bin/bash"]
 CMD ["entrypoint.sh"]
