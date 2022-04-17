@@ -29,10 +29,18 @@ spec:
         port: 8000
     env:
     - name: DB_ENGINE
-      value: "sqlite"
+      value: "postgres"
+    - name: DB_NAME
+      value: "POSTGRES_DB"
+    - name: DB_USER
+      value: "POSTGRES_USER"
+    - name: DB_HOST
+      value: "deployment/postgres-service.yaml"
+    - name: DB_PASSWORD
+      value: "POSTGRES_PASSWORD"
     - name: DJANGO_ADMIN_EMAIL
       value: "test@test.test"
     - name: DJANGO_ADMIN_USERNAME
       value: "test"
     - name: DJANGO_SUPERUSER_PASSWORD
-      value: "test"
+      value: "testtest"
