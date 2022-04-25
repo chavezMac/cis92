@@ -10,7 +10,7 @@ spec:
     persistentVolumeClaim:
       claimName: data
   containers:
-  - name: mysite
+  - name: postgres
     image: docker.io/postgres:14.2
     imagePullPolicy: Always
     resources:
@@ -19,7 +19,7 @@ spec:
         memory: 512Mi
         ephemeral-storage: 10Mi
     ports:
-    - containerPort: 8000
+    - containerPort: 8080
     volumeMounts:
     - name: data
       mountPath: /var/lib/postgresql/data
@@ -30,3 +30,19 @@ spec:
       value: "mysiteuser"
     - name: POSTGRES_PASSWORD
       value: "mysitepassword"
+    - name: DB_ENGINE
+      value: "postgres"
+    - name: DB_NAME
+      value: "POSTGRES_DB"
+    - name: DB_USER
+      value: "POSTGRES_USER"
+    - name: DB_HOST
+      value: "postgres"
+    - name: DB_PASSWORD
+      value: "POSTGRES_PASSWORD"
+    - name: DJANGO_ADMIN_EMAIL
+      value: "test@test.test"
+    - name: DJANGO_ADMIN_USERNAME
+      value: "test"
+    - name: DJANGO_SUPERUSER_PASSWORD
+      value: "testtest"
