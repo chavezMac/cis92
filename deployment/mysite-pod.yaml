@@ -31,13 +31,13 @@ spec:
     - name: DB_ENGINE
       value: "postgres"
     - name: DB_NAME
-      value: "POSTGRES_DB"
+      value: "mysitedb"
     - name: DB_USER
-      value: "POSTGRES_USER"
+      value: "mysiteuser"
     - name: DB_HOST
       value: "postgres"
     - name: DB_PASSWORD
-      value: "POSTGRES_PASSWORD"
+      value: "mysitepassword"
     - name: DJANGO_ADMIN_EMAIL
       value: "test@test.test"
     - name: DJANGO_ADMIN_USERNAME
