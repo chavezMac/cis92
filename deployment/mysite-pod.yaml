@@ -35,7 +35,7 @@ spec:
     - name: DB_USER
       value: "POSTGRES_USER"
     - name: DB_HOST
-      value: "postgres-service"
+      value: "postgres"
     - name: DB_PASSWORD
       value: "POSTGRES_PASSWORD"
     - name: DJANGO_ADMIN_EMAIL
