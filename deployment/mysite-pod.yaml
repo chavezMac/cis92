@@ -12,7 +12,7 @@ spec:
   containers:
   - name: mysite
     image: ghcr.io/chavezmac/cis92:main
-    imagePullPolicy: IfNotPresent
+    imagePullPolicy: Always
     resources:
       limits:
         cpu: 500m
