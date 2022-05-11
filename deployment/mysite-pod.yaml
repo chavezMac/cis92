@@ -31,13 +31,13 @@ spec:
     - name: DB_ENGINE
       value: "postgres"
     - name: DB_NAME
-      value: "mysitedb"
+      value: "django"
     - name: DB_USER
-      value: "mysiteuser"
+      value: "django"
     - name: DB_HOST
-      value: "postgres"
+      value: "10.3.80.3"
     - name: DB_PASSWORD
-      value: "mysitepassword"
+      value: "django"
     - name: DJANGO_ADMIN_EMAIL
       value: "test@test.test"
     - name: DJANGO_ADMIN_USERNAME

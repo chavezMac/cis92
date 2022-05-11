@@ -1,0 +1,18 @@
+# Configuration for MariaDB
+auth:
+  rootPassword: test
+  database: django
+  username: test
+  password: test
+
+#GKE Autopilot requires requests and limits.
+primary:
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "500m"
+      ephemeral-storage: "100Mi"
+    limits:
+      memory: "512Mi"
+      cpu: "500m"
+      ephemeral-storage: "100Mi"
