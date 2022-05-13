@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysite
+  labels:
+    app: mysite
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mysite
+  template:
+    metadata:
+      labels:
+        app: mysite
+    spec:
+      volumes:
+      - name: db
+        persistentVolumeClaim:
+          claimName: db
+      containers:
+      - name: mysite
+        image: ghcr.io/chavezmac/cis92:main
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1Gi
+            ephemeral-storage: 20Mi
+        ports:
+        - containerPort: 8000
+        volumeMounts:
+        - name: db
+          mountPath: /db
+        livenessProbe:
+          httpGet:
+            path: /polls/
+            port: 8000
+        env:
+        - name: DB_ENGINE
+          value: "postgres"
+        - name: DB_NAME
+          value: "django"
+        - name: DB_USER
+          value: "django"
+        - name: DB_HOST
+          value: "10.3.80.3"
+        - name: DB_PASSWORD
+          value: "django"
+        - name: DJANGO_ADMIN_EMAIL
+          value: "test@test.test"
+        - name: DJANGO_ADMIN_USERNAME
+          value: "test"
+        - name: DJANGO_SUPERUSER_PASSWORD
+          value: "testtest"
