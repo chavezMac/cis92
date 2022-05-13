@@ -29,9 +29,6 @@ spec:
             ephemeral-storage: 20Mi
         ports:
         - containerPort: 8000
-        volumeMounts:
-        - name: db
-          mountPath: /db
         livenessProbe:
           httpGet:
             path: /polls/
