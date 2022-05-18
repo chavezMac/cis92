@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: woyogi-ingress
+  annotations: 
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: "www.woyogi.com"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: mysite
+            port:
+              number: 8000
+  defaultBackend:
+    service:
+      name: mysite
+      port:
+        number: 8000
